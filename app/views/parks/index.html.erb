@@ -1,0 +1,13 @@
+<h3>Total Number of Parks Found: <%= @parks.count %></h3>
+<% @parks.each do |park| %>
+  <div class="park">
+    <div class="name"><h2>Park Name: <%= park.full_name %></h2></div>
+    <div class="description"><b>Description: </b> <%= park.description %></div></br>
+    <div class="direction_info"><b>Directions: </b><%= park.directions_info%></div></br>
+    <div class= "standard_hours"><b>Standard Hours: </b>
+          <% park.standard_hours.each do |day, hours| %>
+            <ul><li><%= day %>: <%= hours %></li></ul>
+          <% end %>
+          </div></br>
+  </div></br></br>
+<% end %>
